@@ -1,6 +1,16 @@
 # Pi-Hole Installation Walkthrough
 ***
 ![PIE](pihole_logo.jpg)
+
+#### Table of Contents:
+***
+1. [Docker Installation](#docker_install)
+2. [Pi-Hole Docker Container Installation](#pihole_container)
+3. [Docker-Compose Configuration File](#docker_configure)
+4. [Disable the Systemd-Resolve Service (For Ubuntu)](#systemd)
+5. [Run the Pi-Hole Docker Container](#run)
+6. [Pi-Hole Web Interface Access](#access)
+
 #### Docker Installation <a name="docker_install"></a>
 ***
 1. Update the packages
@@ -11,7 +21,7 @@ sudo apt update
 ```
 sudo apt install docker-compose
 ```
-#### Pi-Hole Docker Container Installation
+#### Pi-Hole Docker Container Installation <a name="pihole_container"></a>
 ***
 1. Create a Pi-Hole Directory
 ```
@@ -20,7 +30,7 @@ mkdir ~/pihole
 ```
 cd ~/pihole
 ```
-#### Docker-Compose Configuration File
+#### Docker-Compose Configuration File <a name="docker_configure"></a>
 1. Create a yml for configuration.
 ```
 nano docker-compose.yml
@@ -50,7 +60,7 @@ services:
       - NET_ADMIN
     restart: unless-stopped
 ```
-#### Disable the Systemd-Resolve Service (For Ubuntu Machine)
+#### Disable the Systemd-Resolve Service (For Ubuntu Machine) <a name="systemd"></a>
 1. Since the Systemd-Resolve Service utilizes the same area that the Pi-Hole needs, this service must first be disabled. 
 ```
 sudo systemctl disable systemd-resolved
@@ -87,7 +97,8 @@ http://[IPADDRESS]:[PORT]/admin
 Once the installation process is complete, you should see the view similar to here below:
 ![RESULT](Pi_Hole.jpg)
 
-
+#### Reference:
+1. https://pimylifeup.com/pi-hole-docker/
 
 
       
