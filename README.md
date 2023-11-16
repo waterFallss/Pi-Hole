@@ -35,7 +35,7 @@ cd ~/pihole
 ```
 nano docker-compose.yml
 ```
-2. Fill in the yml file with the information below.Modify the lines with square brackets.
+2. Fill in the yml file with the information below. Modify the lines with square brackets.
 ```
 version: "3"
 
